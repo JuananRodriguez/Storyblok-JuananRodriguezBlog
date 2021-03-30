@@ -13,7 +13,7 @@ const Teaser = ({ blok }) => {
             <img
               src={blok.image.filename}
               alt={blok.image.alt}
-              className="w-full"
+              // className="w-full"
             />
           </div>
         </div>
