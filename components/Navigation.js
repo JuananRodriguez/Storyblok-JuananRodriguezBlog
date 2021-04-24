@@ -1,5 +1,5 @@
 const Navigation = ({ language }) => (
-  <header className="w-full bg-white">
+  <header className="w-full bg-white absolute">
     <nav className="" role="navigation">
       <div className="container mx-auto p-4 flex flex-wrap items-center md:flex-no-wrap">
         <div className="mr-4 md:mr-8">
