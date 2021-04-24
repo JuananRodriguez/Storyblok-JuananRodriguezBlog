@@ -2,7 +2,6 @@ import React from "react";
 import SbEditable from "storyblok-react";
 import styled, { css } from "styled-components";
 
-
 const CommonStyles = css`
     font-weight: 900;
     text-transform: uppercase;
