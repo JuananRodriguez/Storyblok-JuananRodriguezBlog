@@ -3,7 +3,7 @@ import SbEditable from "storyblok-react";
 import styled from "styled-components";
 import DynamicComponent from './DynamicComponent'
 
-const SectionBackgroundWrapperStyled = styled.div`
+const SectionBackgroundStyled = styled.div`
     z-index: -1;
     position: absolute;
     top: 0;
@@ -12,9 +12,29 @@ const SectionBackgroundWrapperStyled = styled.div`
     left: 0;
     height: 100%;
     width: 100%;
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: -40% center;
+    
+    @media (max-width: 1200px){
+        background-position: -100px center;
+    }
+    
+    @media (max-width: 1040px){
+       background-position: center;
+    }
+
+    &:before{
+        content:"";
+        width: 40%;
+        height: 100%;
+        background: white;
+        display: inline-block;
+
+        @media (max-width: 1040px){
+            display: none;
+        }
+    }
 
     & + img {
         display: none;
@@ -24,7 +44,7 @@ const SectionBackgroundWrapperStyled = styled.div`
 const SectionBackground = ({ filename, alt }) => {
     return (
         <>
-            <SectionBackgroundWrapperStyled className="section-background" style={{ backgroundImage: `url(${filename})` }} />
+            <SectionBackgroundStyled className="section-background" style={{ backgroundImage: `url(${filename})` }} />
             <img src={filename} alt={alt} />
         </>
     )
