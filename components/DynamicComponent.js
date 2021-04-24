@@ -4,8 +4,10 @@ import FeaturedPosts from './FeaturedPosts'
 import Grid from './Grid'
 import Placeholder from './Placeholder'
 import Melon from './Melon'
+import Title from './Title'
 
 const Components = {
+  'title': Title,
   'melon': Melon,
   'teaser': Teaser,
   'grid': Grid,
