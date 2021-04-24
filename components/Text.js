@@ -2,7 +2,10 @@ import React from "react";
 import SbEditable from "storyblok-react";
 import styled from "styled-components";
 
-const PStyled = styled.p`${({ cssFromStoryBlok }) => `${cssFromStoryBlok}`}
+const PStyled = styled.p`${({ cssFromStoryBlok, theme }) => `
+        color: ${theme.colors.text};
+        ${cssFromStoryBlok}
+    `}
 `
 
 const Text = ({ blok }) => {

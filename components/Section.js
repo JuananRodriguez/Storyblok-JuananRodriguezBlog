@@ -4,41 +4,43 @@ import styled from "styled-components";
 import DynamicComponent from './DynamicComponent'
 
 const SectionBackgroundStyled = styled.div`
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -40% center;
-    
-    @media (max-width: 1200px){
-        background-position: -100px center;
-    }
-    
-    @media (max-width: 1040px){
-       background-position: center;
-    }
-
-    &:before{
-        content:"";
-        width: 40%;
+${({theme}) => `
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        left: 0;
         height: 100%;
-        background: white;
-        display: inline-block;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: -40% center;
+        
+        @media (max-width: ${theme.breakpoints.l}){
+            background-position: -100px center;
+        }
+        
+        @media (max-width: ${theme.breakpoints.m}){
+            background-position: center;
+        }
 
-        @media (max-width: 1040px){
+        &:before{
+            content:"";
+            width: 40%;
+            height: 100%;
+            background: white;
+            display: inline-block;
+
+            @media (max-width: ${theme.breakpoints.m}){
+                display: none;
+            }
+        }
+
+        & + img {
             display: none;
         }
-    }
-
-    & + img {
-        display: none;
-    }
+    `}
 `
 
 const SectionBackground = ({ filename, alt }) => {
