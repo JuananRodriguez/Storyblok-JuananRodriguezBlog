@@ -5,6 +5,7 @@ import Grid from './Grid'
 import Placeholder from './Placeholder'
 import Title from './Title'
 import Section from './Section'
+import Text from './Text'
 
 const Components = {
   'title': Title,
@@ -12,7 +13,8 @@ const Components = {
   'teaser': Teaser,
   'grid': Grid,
   'feature': Feature,
-  'featured-posts': FeaturedPosts
+  'featured-posts': FeaturedPosts,
+  'text': Text,
 }
 
 const DynamicComponent = ({blok}) => {
