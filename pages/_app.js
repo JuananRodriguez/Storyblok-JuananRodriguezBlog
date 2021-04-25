@@ -7,7 +7,7 @@ const theme = {
     l: "1200px",
   },
   colors: {
-    title: '#0070f3', 
+    title: '#3c3f40', 
     text: '#040404',
   },
 }
