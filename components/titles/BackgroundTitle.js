@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const TitleStyled = styled.h1`
 ${({ theme, backgroundContent }) => `
+        margin-bottom: 1rem;
         color: ${theme.colors.title};
         display: flex;
         justify-content: flex-start;
