@@ -6,6 +6,7 @@ import Placeholder from './Placeholder'
 import Section from './Section'
 import DynamicTitle from './titles/DynamicTitle'
 import Text from './Text'
+import Story from './Story'
 
 const Components = {
   'title': DynamicTitle,
@@ -15,6 +16,7 @@ const Components = {
   'feature': Feature,
   'featured-posts': FeaturedPosts,
   'text': Text,
+  'story': Story,
 }
 
 const DynamicComponent = ({ blok }) => {
