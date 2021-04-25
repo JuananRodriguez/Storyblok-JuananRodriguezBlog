@@ -20,9 +20,7 @@ class StoryblokService {
   }
 
   // ask Storyblok's Content API for content of story
-  get(slug, params) {
-    params = params || {}
-
+  get(slug, params = {}) {
     if (this.getQuery('_storyblok') || this.devMode || (typeof window !== 'undefined' && window.storyblok)) {
       params.version = 'draft'
     }
