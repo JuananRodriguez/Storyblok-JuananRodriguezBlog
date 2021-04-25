@@ -3,12 +3,12 @@ import Feature from './Feature'
 import FeaturedPosts from './FeaturedPosts'
 import Grid from './Grid'
 import Placeholder from './Placeholder'
-import Title from './Title'
 import Section from './Section'
+import DynamicTitle from './titles/DynamicTitle'
 import Text from './Text'
 
 const Components = {
-  'title': Title,
+  'title': DynamicTitle,
   'section': Section,
   'teaser': Teaser,
   'grid': Grid,
@@ -17,12 +17,12 @@ const Components = {
   'text': Text,
 }
 
-const DynamicComponent = ({blok}) => {
+const DynamicComponent = ({ blok }) => {
   if (typeof Components[blok.component] !== 'undefined') {
     const Component = Components[blok.component]
     return <Component blok={blok} />
   }
-  return <Placeholder componentName={blok.component}/>
+  return <Placeholder componentName={blok.component} />
 }
 
 export default DynamicComponent

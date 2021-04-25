@@ -38,16 +38,16 @@ const SubtitleSpanStyled = styled.span`
     `}
 `;
 
-const Title = ({ blok }) => {
+const DoubleTitle = ({ blok }) => {
     const { _uid, content, subtitle } = blok
     return (
         <SbEditable content={blok} key={_uid}>
             <h1>
-                <ContentSpanStyled>{content}</ContentSpanStyled>
-                <SubtitleSpanStyled>{subtitle}</SubtitleSpanStyled>
+                <ContentSpanStyled className="double-title-content">{content}</ContentSpanStyled>
+                <SubtitleSpanStyled className="double-title-subtitle">{subtitle}</SubtitleSpanStyled>
             </h1>
         </SbEditable>
     );
 };
 
-export default Title;
+export default DoubleTitle;
