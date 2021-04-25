@@ -8,7 +8,7 @@ const Layout = ({ children, language }) => (
     <Head />
     {/* <Navigation language={language} /> */}
     {children}
-    <Footer />
+    {/* <Footer /> */}
     {StoryblokService.bridge()}
   </>
 )
