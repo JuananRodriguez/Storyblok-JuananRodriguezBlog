@@ -71,9 +71,6 @@ const SectionStyled = styled.div`${({ isFullwidth, isFullpage }) => `
 
 const Section = ({ blok }) => {
     const { _uid, bloks, fullwidth, fullpage, css, background_image } = blok
-
-    console.log(background_image)
-
     return (
         <SbEditable content={blok} key={_uid}>
             <SectionWrapperStyled cssFromStoryBlok={css}>
