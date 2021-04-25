@@ -14,13 +14,12 @@ const EntryPoint = (props) => {
 }
 
 EntryPoint.getInitialProps = async ({ query }) => {
-
   StoryblokService.setQuery(query)
   let language = query.language || "en"
   let insertLanguage = language !== "en" ? `/${language}` : ""
   let res = await StoryblokService.get(`cdn/stories${insertLanguage}/home`,
     {
-      "resolve_relations": "featured-posts.posts"
+      "resolve_relations": "portfolio-grid.works"
     })
 
   return {
