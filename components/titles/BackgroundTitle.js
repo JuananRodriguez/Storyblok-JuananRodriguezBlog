@@ -20,12 +20,24 @@ ${({ theme, backgroundContent }) => `
             left: 0;
             bottom: 0;
             color: transparent;
-            font-size: 150px;
             font-weight: 900;
-            opacity: .4;
-            line-height: 130px;
             -webkit-text-stroke: 1px ${theme.colors.title};
             -webkit-user-select: none;
+            font-size: 150px;
+            line-height: 130px;
+            opacity: .4;
+            
+            @media (max-width: ${theme.breakpoints.l}){
+                font-size: 90px;
+                line-height: 80px;
+                opacity: .3;
+            }
+    
+            @media (max-width: ${theme.breakpoints.m}){
+                font-size: 70px;
+                line-height: 60px;
+                opacity: .2;
+            }
         }
     `}
 `
