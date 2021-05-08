@@ -1,7 +1,7 @@
 import React from 'react'
-import Layout from '../../../components/Layout'
-import BlogPost from '../../../components/BlogPost'
-import StoryblokService from '../../../utils/storyblok-service'
+import Layout from '../../components/Layout'
+import BlogPost from '../../components/BlogPost'
+import StoryblokService from '../../utils/storyblok-service'
 
 export default class extends React.Component {
     constructor(props) {
