@@ -61,12 +61,11 @@ const GridWrapperStyled = styled.div`
 `
 
 const PortfolioGrid = ({ blok }) => {
-    const { _uid, works = [] } = blok
-
+    const { _uid, items = [] } = blok
     return (
         <SbEditable content={blok} key={_uid}>
             <GridWrapperStyled>
-                {works.map(work => <GridItem  {...work} key={work.uuid} />)}
+                {items.map(work => <GridItem  {...work} key={work.uuid} />)}
             </GridWrapperStyled>
         </SbEditable>
     );
