@@ -24,8 +24,8 @@ ${({ theme, backgroundContent }) => `
             font-weight: 900;
             -webkit-text-stroke: 1px ${theme.colors.title};
             -webkit-user-select: none;
-            font-size: 150px;
-            line-height: 130px;
+            font-size: 100px;
+            line-height: 80px;
             opacity: .4;
             
             @media (max-width: ${theme.breakpoints.l}){

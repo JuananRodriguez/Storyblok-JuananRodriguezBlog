@@ -10,7 +10,7 @@ ${({ theme }) => `
         padding: 0;
         line-height: 1.1;
         letter-spacing: .8px;
-        font-size: 120px;
+        font-size: 80px;
         display: block;
 
         @media (max-width: ${theme.breakpoints.l}){

@@ -64,7 +64,7 @@ const SectionStyled = styled.div`${({ isFullwidth, isFullpage }) => `
         overflow: hidden;
         position: relative;
         margin: auto;
-        max-width: ${!isFullwidth ? "1200px" : "100%"};
+        max-width: ${!isFullwidth ? "1000px" : "100%"};
         min-height: ${isFullpage ? "100vh" : "auto"};
     `}
 `
