@@ -4,6 +4,7 @@ import PortfolioGrid from './PortfolioGrid'
 import PostsGrid from './PostsGrid'
 import Grid from './Grid'
 import Placeholder from './Placeholder'
+import HomePresentation from './HomePresentation'
 import Section from './Section'
 import DynamicTitle from './titles/DynamicTitle'
 import Text from './Text'
@@ -15,6 +16,7 @@ const Components = {
   'teaser': Teaser,
   'grid': Grid,
   'feature': Feature,
+  'home-presentation': HomePresentation,
   'portfolio-grid': PortfolioGrid,
   'posts-grid': PostsGrid,
   'text': Text,
