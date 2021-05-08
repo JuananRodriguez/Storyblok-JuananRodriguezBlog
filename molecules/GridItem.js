@@ -33,9 +33,8 @@ const WorkTitleStyled = styled.h3`
 `
 
 const GridItem = ({ content, full_slug }) => {
-    if (content && content.images && content.images[0]) {
-        const { name, images = [{}] } = content;
-        const { filename, alt } = images[0];
+    if (content && content.mainImage) {
+        const { title, mainImage: { filename, alt } } = content;
         return (
             <div>
                 <ImageWrapperStyled href={`/${full_slug}`} >
@@ -43,7 +42,7 @@ const GridItem = ({ content, full_slug }) => {
                         <img src={filename} alt={alt} />
                     </LinkImageStyled>
                 </ImageWrapperStyled>
-                <WorkTitleStyled>{name}</WorkTitleStyled>
+                <WorkTitleStyled>{title}</WorkTitleStyled>
             </div>
         );
     }
