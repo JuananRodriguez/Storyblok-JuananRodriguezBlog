@@ -1,6 +1,7 @@
 import Teaser from './Teaser'
 import Feature from './Feature'
 import PortfolioGrid from './PortfolioGrid'
+import PostsGrid from './PostsGrid'
 import Grid from './Grid'
 import Placeholder from './Placeholder'
 import Section from './Section'
@@ -15,6 +16,7 @@ const Components = {
   'grid': Grid,
   'feature': Feature,
   'portfolio-grid': PortfolioGrid,
+  'posts-grid': PostsGrid,
   'text': Text,
   'story': Story,
 }
