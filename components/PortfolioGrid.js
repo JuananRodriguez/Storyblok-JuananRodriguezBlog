@@ -35,7 +35,7 @@ const WorkTitleStyled = styled.h3`
 `
 
 const GridItem = ({ content, full_slug }) => {
-    if (content && content?.images[0]) {
+    if (content && content.images && content.images[0]) {
         const { name, images = [{}] } = content;
         const { filename, alt } = images[0];
         return (
