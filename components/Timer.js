@@ -1,10 +1,16 @@
+import { useMemo } from "react";
+
 const Timer = ({ blok }) => {
   const { from } = blok;
-
   const fromDate = new Date(from).getTime();
-  const toDate = new Date().getTime();
-  const diff = toDate - fromDate;
 
+  const toDate = useMemo(() => {
+    return new Date().getTime();
+  }, [from]);
+
+  console.log('toDate', toDate)
+
+  const diff = toDate - fromDate;
   const totalDays = diff / (1000 * 3600 * 24);
 
   const inYears = Math.floor(totalDays / 365);
