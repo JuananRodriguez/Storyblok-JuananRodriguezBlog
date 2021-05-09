@@ -1,43 +1,32 @@
-import React from 'react'
-import Page from '../components/Page'
-import Layout from '../components/Layout'
-import StoryblokService from '../utils/storyblok-service'
+import React from "react";
+import Page from "../components/Page";
+import Layout from "../components/Layout";
+import StoryblokService from "../utils/storyblok-service";
+import useStoryblokEditor from "../hooks/useStoryblokEditor";
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      story: props.res.data.story,
-      language: props.language,
-    }
-  }
+const RootPage = ({ res, language }) => {
+  const [story] = useStoryblokEditor(res.data.story);
+  return (
+    <Layout language={language}>
+      <Page content={story.content} />
+    </Layout>
+  );
+};
 
-  static async getInitialProps({ query }) {
-    StoryblokService.setQuery(query)
-    let language = query.language || "en"
-    let insertLanguage = language !== "en" ? `/${language}` : ""
-    let res = await StoryblokService.get(`cdn/stories${insertLanguage}`,
-    {
-      "resolve_relations": "featured-posts.posts"
-    })
+export async function getServerSideProps({ query }) {
+  StoryblokService.setQuery(query);
+  let language = query.language || "en";
+  let insertLanguage = language !== "en" ? `/${language}` : "";
+  let res = await StoryblokService.get(`cdn/stories${insertLanguage}`, {
+    resolve_relations: "portfolio-grid.items,posts-grid.items",
+  });
 
-    return {
+  return {
+    props: {
       res,
-      language
-    }
-  }
-
-  componentDidMount() {
-    StoryblokService.initEditor(this)
-  }
-
-  render() {
-    const contentOfStory = this.state.story.content
-
-    return (
-      <Layout language={this.state.language}>
-        <Page content={contentOfStory} />
-      </Layout>
-    )
-  }
+      language,
+    },
+  };
 }
+
+export default RootPage;
