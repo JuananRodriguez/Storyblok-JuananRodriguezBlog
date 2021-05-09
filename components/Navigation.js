@@ -28,19 +28,13 @@ const Navigation = () => (
       <a href="/"> Juanan Rodriguez </a>
       <ul>
         <li>
-          <a href="/about">
-            Sobre mi
-          </a>
+          <a href="/about">Sobre mi</a>
+        </li>
+        <li style={{ display: "none" }}>
+          <a href="/blog">Blog</a>
         </li>
         <li>
-          <a href="/blog">
-            Blog
-          </a>
-        </li>
-        <li>
-          <a href="/tips">
-            Tips
-          </a>
+          <a href="/tips">Tips</a>
         </li>
       </ul>
     </nav>
