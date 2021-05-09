@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+import Link from "next/link";
 
 const HeaderStyled = Styled.nav`
   width: 100%;
@@ -25,16 +26,16 @@ const HeaderStyled = Styled.nav`
 const Navigation = () => (
   <HeaderStyled>
     <nav role="navigation">
-      <a href="/"> Juanan Rodriguez </a>
+      <Link href="/"> Juanan Rodriguez </Link>
       <ul>
         <li>
-          <a href="/about">Sobre mi</a>
+          <Link href="/about">Sobre mi</Link>
         </li>
         <li style={{ display: "none" }}>
-          <a href="/blog">Blog</a>
+          <Link href="/blog">Blog</Link>
         </li>
         <li>
-          <a href="/tips">Tips</a>
+          <Link href="/tips">Tips</Link>
         </li>
       </ul>
     </nav>
