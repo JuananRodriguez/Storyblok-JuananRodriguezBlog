@@ -12,6 +12,19 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
           font-size: 1.8rem;
       }
     }
+
+    p {
+      font-size: 1.5rem;
+      color: ${theme.colors.text};
+      margin-bottom: 1rem;
+
+      @media (max-width: ${theme.breakpoints.m}){
+          font-size: 1.4rem;
+      }
+    }
+
+
+
   `}
 `;
 
