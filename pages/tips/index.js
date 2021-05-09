@@ -17,7 +17,7 @@ export default class extends React.Component {
     let language = query.language || "en";
     let insertLanguage = language !== "en" ? `${language}/` : "";
     const res = await StoryblokService.get(`cdn/stories`, {
-      starts_with: `${insertLanguage}blog/`,
+      starts_with: `${insertLanguage}tips/`,
     });
 
     return {
@@ -59,7 +59,7 @@ export default class extends React.Component {
                   <div className="mt-2">
                     <a
                       className="text-2xl text-gray-700 font-bold hover:text-gray-600"
-                      href={`blog/${post.slug}`}
+                      href={`tips/${post.slug}`}
                     >
                       {post.content.title}
                     </a>
@@ -68,7 +68,7 @@ export default class extends React.Component {
                   <div className="flex justify-between items-center mt-4">
                     <a
                       className="text-blue-600 hover:underline"
-                      href={`blog/${post.slug}`}
+                      href={`tips/${post.slug}`}
                     >
                       Read more
                     </a>
