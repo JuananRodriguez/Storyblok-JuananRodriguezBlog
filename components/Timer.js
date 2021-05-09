@@ -18,9 +18,12 @@ const Timer = ({ blok }) => {
   const hours = inHours !== 1 ? "horas" : "hora";
 
   return (
-    <strong>
-      {inYears} {years}, {inMonth} {months}, {inDays} {days} y {inHours} {hours}
-    </strong>
+    <p>
+      <strong>
+        {inYears} {years}, {inMonth} {months}, {inDays} {days} y {inHours}{" "}
+        {hours}
+      </strong>
+    </p>
   );
 };
 
