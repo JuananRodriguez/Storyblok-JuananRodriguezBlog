@@ -10,10 +10,12 @@ import DynamicTitle from "./titles/DynamicTitle";
 import Text from "./Text";
 import Story from "./Story";
 import Timer from "./Timer";
+import TipsGrid from "./TipsGrid";
 
 const Components = {
   timer: Timer,
   title: DynamicTitle,
+  "tips-grid": TipsGrid,
   section: Section,
   teaser: Teaser,
   grid: Grid,

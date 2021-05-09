@@ -10,7 +10,6 @@ const HeadlingCommons = css`
 `;
 
 const GlobalStyle = createGlobalStyle`${({ theme }) => `
-
     * {
       box-sizing: border-box;
     }
@@ -44,12 +43,10 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
     a {
       color: ${theme.colors.link};
       &:hover {
+        cursor: pointer;
         text-decoration: underline;
       }
     }
-
-
-
   `}
 `;
 
