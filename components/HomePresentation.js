@@ -35,8 +35,23 @@ const ImageStyled = styled.img`
     max-width: 400px
 `;
 
+const Time = ({ from }) => {
+  const fromDate = new Date(from).getTime();
+  const toDate = new Date().getTime();
+  const diff = toDate - fromDate;
+
+  const totalDays = diff / (1000 * 3600 * 24);
+
+  const inYears = Math.floor(totalDays / 365);
+  const inMonth = Math.floor((totalDays % 365) / 30);
+  const inDays = Math.floor(totalDays % 30);
+  const inHours = Math.floor((totalDays * 24) % 24);
+
+  return (<span>{inYears} años {inMonth} meses {inDays} días y  {inHours} horas</span>)
+}
+
 const HomePresentation = ({ blok }) => {
-  const { title, description, featureImage: { filename, alt } } = blok
+  const { title, description, developing_from, featureImage: { filename, alt } } = blok
   return (
     <SbEditable content={blok} key={blok._uid}>
 
@@ -47,12 +62,14 @@ const HomePresentation = ({ blok }) => {
       <DescriptionWrapperStyled>
         <DescriptionStyled>
           <RichText content={description} />
+          <Time from={developing_from} />
         </DescriptionStyled>
         <ImageStyled src={filename} alt={alt} />
       </DescriptionWrapperStyled>
-      
+
     </SbEditable>
   )
 }
+
 
 export default HomePresentation
