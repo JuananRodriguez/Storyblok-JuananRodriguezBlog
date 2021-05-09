@@ -6,9 +6,9 @@ import StoryblokService from '../utils/storyblok-service'
 const Layout = ({ children, language }) => (
   <>
     <Head />
-    {/* <Navigation language={language} /> */}
+    <Navigation language={language} />
     {children}
-    {/* <Footer /> */}
+    <Footer />
     {StoryblokService.bridge()}
   </>
 )
