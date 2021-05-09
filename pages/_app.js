@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components'
-import Theme from '../styled/theme';
+import Theme from '../styled/Theme';
 import '../styles/tailwind.css'
 
 
