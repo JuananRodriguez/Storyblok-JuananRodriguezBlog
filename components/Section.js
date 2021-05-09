@@ -56,8 +56,7 @@ const SectionWrapperStyled = styled.section`${({ cssFromStoryBlok }) => `
         overflow: hidden;
         position: relative;
         width: 100%;
-        padding-left: 1.0rem;
-        padding-right: 1.0rem;
+        padding: 1rem 1rem 3rem 1rem;
 
         ${cssFromStoryBlok}
         `}
