@@ -59,7 +59,12 @@ const Time = ({ from }) => {
   const inDays = Math.floor(totalDays % 30);
   const inHours = Math.floor((totalDays * 24) % 24);
 
-  return (<strong>{inYears} años {inMonth} meses {inDays} días y  {inHours} horas</strong>)
+  const years = inYears !== 1 ? 'años' : 'año';
+  const months = inMonth !== 1 ? 'meses' : 'mes';
+  const days = inDays !== 1 ? 'días' : 'día';
+  const hours = inHours !== 1 ? 'horas' : 'hora';
+
+  return (<strong>{inYears} {years}, {inMonth} {months}, {inDays} {days} y {inHours} {hours}</strong>)
 }
 
 const HomePresentation = ({ blok }) => {
