@@ -23,6 +23,13 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
       }
     }
 
+    a {
+      color: ${theme.colors.link};
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
 
 
   `}

@@ -9,6 +9,7 @@ const theme = {
   colors: {
     title: '#3c3f40', 
     text: '#040404',
+    link: '#7752e6'
   },
 }
 
