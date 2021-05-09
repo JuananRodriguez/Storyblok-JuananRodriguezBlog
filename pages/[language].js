@@ -16,7 +16,7 @@ export default class extends React.Component {
     StoryblokService.setQuery(query)
     let language = query.language || "en"
     let insertLanguage = language !== "en" ? `/${language}` : ""
-    let res = await StoryblokService.get(`cdn/stories${insertLanguage}/home`,
+    let res = await StoryblokService.get(`cdn/stories${insertLanguage}`,
     {
       "resolve_relations": "featured-posts.posts"
     })
