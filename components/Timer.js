@@ -1,13 +1,7 @@
-import { useMemo } from "react";
-
 const Timer = ({ blok }) => {
   const { from } = blok;
   const fromDate = new Date(from).getTime();
-
-  const now = new Date();
-  var userOffset = now.getTimezoneOffset() * 60 * 1000;
-  var serverOffset = -3 * 60 * 60 * 1000; 
-  const toDate = now.getTime() - userOffset + serverOffset;
+  const toDate = new Date().getTime();
 
   const diff = toDate - fromDate;
   const totalDays = diff / (1000 * 3600 * 24);
