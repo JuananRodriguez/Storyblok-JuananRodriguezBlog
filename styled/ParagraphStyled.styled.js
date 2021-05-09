@@ -6,7 +6,7 @@ const ParagraphStyled = styled.p`${({ cssFromStoryBlok, theme }) => `
         margin-bottom: 1rem;
 
         @media (max-width: ${theme.breakpoints.m}){
-            font-size: 1.1rem;
+            font-size: 1.4rem;
         }
 
         ${cssFromStoryBlok}
