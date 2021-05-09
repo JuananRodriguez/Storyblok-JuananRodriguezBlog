@@ -12,6 +12,13 @@ const HeaderStyled = Styled.nav`
     padding: 1rem 0;
     display: flex;
     justify-content: space-between;
+
+    ul {
+      display: fleX;
+      a {
+        padding: 1rem;
+      }
+    }
   }
 `;
 
@@ -23,6 +30,16 @@ const Navigation = () => (
         <li>
           <a href="/about">
             Sobre mi
+          </a>
+        </li>
+        <li>
+          <a href="/blog">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a href="/tips">
+            Tips
           </a>
         </li>
       </ul>
