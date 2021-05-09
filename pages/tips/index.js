@@ -1,12 +1,15 @@
-import React from 'react'
+import React from "react";
 import Layout from "../../components/Layout";
+import TipPost from "../../components/TipPost";
 import StoryblokService from "../../utils/storyblok-service";
-
+import useStoryblokEditor from "../../hooks/useStoryblokEditor";
+import TipsGrid from "../../components/TipsGrid";
+import RichText from "../../molecules/RichText";
 export default class extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stories: props.res.data.stories,
+      tips: props.res.data.stories,
       language: props.language,
     };
   }
@@ -31,54 +34,39 @@ export default class extends React.Component {
   }
 
   render() {
-    const posts = this.state.stories;
+    const { tips } = this.state;
+    const ignoreStartPage = tips.filter(({ is_startpage }) => !is_startpage);
+    const [startPage] = tips.filter(({ is_startpage }) => is_startpage);
 
     return (
       <Layout language={this.state.language}>
-        <main className="container mx-auto">
-          <h1 className="text-5xl font-bold font-serif text-primary tracking-wide pt-12">
-            All Posts
-          </h1>
-
-          <ul>
-            {posts.map((post) => {
-              const lang = post.lang === "default" ? "/en" : `/${post.lang}`;
-              return (
-                <li
-                  key={post.slug}
-                  className="max-w-4xl px-10 my-4 py-6 rounded-lg shadow-md bg-white"
-                >
-                  <div className="flex justify-between items-center">
-                    <span className="font-light text-gray-600">
-                      {`
-                    ${new Date(post.created_at).getDay()}.
-                    ${new Date(post.created_at).getMonth()}.
-                    ${new Date(post.created_at).getFullYear()}`}
-                    </span>
-                  </div>
-                  <div className="mt-2">
-                    <a
-                      className="text-2xl text-gray-700 font-bold hover:text-gray-600"
-                      href={`tips/${post.slug}`}
-                    >
-                      {post.content.title}
-                    </a>
-                    <p className="mt-2 text-gray-600">{post.content.intro}</p>
-                  </div>
-                  <div className="flex justify-between items-center mt-4">
-                    <a
-                      className="text-blue-600 hover:underline"
-                      href={`tips/${post.slug}`}
-                    >
-                      Read more
-                    </a>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </main>
+        <RichText content={startPage.content.content} />
+        <TipsGrid blok={{ items: ignoreStartPage, _uid: "tips" }} />
       </Layout>
     );
   }
 }
+
+// const EntryPoint = ({ res, language }) => {
+//   const [story] = useStoryblokEditor(res.data.story);
+
+//   console.log('stories', res.data)
+
+//   return (
+//     <Layout language={language}>
+//       <TipPost blok={story.content} />
+//     </Layout>
+//   );
+// };
+
+// EntryPoint.getInitialProps = async ({ asPath, query }) => {
+//   StoryblokService.setQuery(query);
+
+//   let language = query.language || "en";
+//   let trimDefault = asPath.replace("/en/tips", "/tips");
+//   let res = await StoryblokService.get(`cdn/stories${trimDefault}`);
+
+//   return { res, language };
+// };
+
+// export default EntryPoint;

@@ -18,16 +18,19 @@ const TipItemStyled = styled.div`
 `;
 
 const TipItem = ({ content, full_slug, created_at }) => {
-  const { title } = content;
-  const date = new Date(created_at).toLocaleDateString();
-  return (
-    <Link href={full_slug}>
-      <TipItemStyled>
-        <h2>{title}</h2>
-        <time dateTime={created_at}>{date}</time>
-      </TipItemStyled>
-    </Link>
-  );
+  if (content) {
+    const { title } = content;
+    const date = new Date(created_at).toLocaleDateString();
+    return (
+      <Link href={full_slug}>
+        <TipItemStyled>
+          <h2>{title}</h2>
+          <time dateTime={created_at}>{date}</time>
+        </TipItemStyled>
+      </Link>
+    );
+  }
+  return null;
 };
 
 const TipsGrid = ({ blok }) => {
@@ -35,7 +38,7 @@ const TipsGrid = ({ blok }) => {
   return (
     <SbEditable content={blok} key={_uid}>
       {items.map((object) => (
-        <TipItem {...object} />
+        <TipItem key={object._uid} {...object} />
       ))}
     </SbEditable>
   );
