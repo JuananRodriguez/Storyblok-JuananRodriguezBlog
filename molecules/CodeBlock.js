@@ -12,11 +12,13 @@ const Pre = Styled.pre`
 
 const CodeBlock = ({ content = "", className }) => {
   const html = hljs.highlightAuto(content).value;
+
   return (
     <Pre>
       <code dangerouslySetInnerHTML={{ __html: html }} />
     </Pre>
   );
+  
 };
 
 export default CodeBlock;
