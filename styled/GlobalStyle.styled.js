@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`${({ theme }) => `
+
+    * {
+      box-sizing: border-box;
+    }
+
     h2 {
       font-size: 2rem;
       color: ${theme.colors.text};
