@@ -1,9 +1,9 @@
-import SbEditable from 'storyblok-react'
+import SbEditable from "storyblok-react";
 import styled from "styled-components";
-import RichText from '../molecules/RichText';
+import RichText from "../molecules/RichText";
 
 const TitleStyled = styled.h1`
-    ${({ theme }) => `
+  ${({ theme }) => `
         color: ${theme.colors.title};
         font-size: 3rem;
         letter-spacing: -.1rem;
@@ -12,14 +12,14 @@ const TitleStyled = styled.h1`
         display: block;
         margin-bottom: 1.6rem;
         `}
-    `;
+`;
 
 const DescriptionWrapperStyled = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-    ${({ theme }) => `
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  ${({ theme }) => `
     
     @media (max-width: ${theme.breakpoints.m}){
       flex-direction: column;
@@ -28,7 +28,7 @@ const DescriptionWrapperStyled = styled.div`
 `;
 
 const DescriptionStyled = styled.div`
-    ${({ theme }) => `
+  ${({ theme }) => `
       color: ${theme.colors.text};
       font-size: 1.6rem;
       line-height: 1.6;
@@ -42,48 +42,29 @@ const DescriptionStyled = styled.div`
 `;
 
 const ImageStyled = styled.img`
-    border-radius: 8px;
-    width: 100%;
-    max-width: 340px
+  border-radius: 8px;
+  width: 100%;
+  max-width: 340px;
 `;
 
-const Time = ({ from }) => {
-  const fromDate = new Date(from).getTime();
-  const toDate = new Date().getTime();
-  const diff = toDate - fromDate;
-
-  const totalDays = diff / (1000 * 3600 * 24);
-
-  const inYears = Math.floor(totalDays / 365);
-  const inMonth = Math.floor((totalDays % 365) / 30);
-  const inDays = Math.floor(totalDays % 30);
-  const inHours = Math.floor((totalDays * 24) % 24);
-
-  const years = inYears !== 1 ? 'años' : 'año';
-  const months = inMonth !== 1 ? 'meses' : 'mes';
-  const days = inDays !== 1 ? 'días' : 'día';
-  const hours = inHours !== 1 ? 'horas' : 'hora';
-
-  return (<strong>{inYears} {years}, {inMonth} {months}, {inDays} {days} y {inHours} {hours}</strong>)
-}
-
 const HomePresentation = ({ blok }) => {
-  const { title, description, developing_from, featureImage: { filename, alt } } = blok
+  const {
+    title,
+    description,
+    featureImage: { filename, alt },
+  } = blok;
+
   return (
     <SbEditable content={blok} key={blok._uid}>
       <DescriptionWrapperStyled>
         <DescriptionStyled>
-          <TitleStyled>
-            {title}
-          </TitleStyled>
+          <TitleStyled>{title}</TitleStyled>
           <RichText content={description} />
-          <Time from={developing_from} />
         </DescriptionStyled>
         <ImageStyled src={filename} alt={alt} />
       </DescriptionWrapperStyled>
     </SbEditable>
-  )
-}
+  );
+};
 
-
-export default HomePresentation
+export default HomePresentation;
