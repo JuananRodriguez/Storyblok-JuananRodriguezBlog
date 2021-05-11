@@ -8,6 +8,8 @@ const Pre = Styled.pre`
     padding: 1rem;
     margin-bottom: 1rem;
     color: #fff;
+    overflow: auto;
+    margin: 2rem 0;
 `;
 
 const CodeBlock = ({ content = "", className }) => {
