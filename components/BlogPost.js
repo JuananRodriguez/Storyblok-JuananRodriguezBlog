@@ -14,7 +14,7 @@ const BlogPost = ({ blok }) => {
           <img className="w-full my-16" src={blok.image} />
         </div>
       </div>
-      <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
+      <div className="max-w-3xl mx-auto text-center pt-2 pl-2 pr-2 pb-2 flex flex-col items-center">
         <div className="leading-relaxed text-xl text-left text-gray-800 drop-cap">
           {render(blok.long_text)}
         </div>
