@@ -17,8 +17,9 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
     h1 {
       ${HeadlingCommons};
       font-size: 3rem;
+      font-weight: bold;
       @media (max-width: ${theme.breakpoints.m}){
-          font-size: 2.6rem;
+          font-size: 1.8rem;
       }
     }
 
