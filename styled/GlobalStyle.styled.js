@@ -32,12 +32,12 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: ${theme.colors.text};
       margin-bottom: 1rem;
 
       @media (max-width: ${theme.breakpoints.m}){
-          font-size: 1.4rem;
+          font-size: 1.25rem;;
       }
     }
 
