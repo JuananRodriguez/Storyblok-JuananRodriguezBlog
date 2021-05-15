@@ -1,10 +1,9 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import TipPost from "../../components/TipPost";
 import StoryblokService from "../../utils/storyblok-service";
-import useStoryblokEditor from "../../hooks/useStoryblokEditor";
 import TipsGrid from "../../components/TipsGrid";
 import RichText from "../../molecules/RichText";
+import { Section } from "../../molecules";
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -40,8 +39,10 @@ export default class extends React.Component {
 
     return (
       <Layout language={this.state.language}>
-        <RichText content={startPage.content.content} />
-        <TipsGrid blok={{ items: ignoreStartPage, _uid: "tips" }} />
+        <Section>
+          <RichText content={startPage.content.content} />
+          <TipsGrid blok={{ items: ignoreStartPage, _uid: "tips" }} />
+        </Section>
       </Layout>
     );
   }
