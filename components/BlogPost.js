@@ -1,26 +1,17 @@
-import React from "react"
-import SbEditable from "storyblok-react"
-import { render } from "storyblok-rich-text-react-renderer"
+import React from "react";
+import SbEditable from "storyblok-react";
+import { render } from "storyblok-rich-text-react-renderer";
+import { Section, H1 } from "../molecules";
 
 const BlogPost = ({ blok }) => {
   return (
     <SbEditable content={blok} key={blok._uid}>
-      <div className="bg-white-half w-full">
-        <div className="max-w-3xl mx-auto text-center pt-20 flex flex-col items-center">
-          <h1 className="text-5xl font-bold font-serif text-primary tracking-wide">
-            {blok.title}
-          </h1>
-          <p className="text-gray-500 text-lg max-w-lg">{blok.intro}</p>
-          <img className="w-full my-16" src={blok.image} />
-        </div>
-      </div>
-      <div className="max-w-3xl mx-auto text-center pt-2 pl-2 pr-2 pb-2 flex flex-col items-center">
-        <div className="leading-relaxed text-xl text-left text-gray-800 drop-cap">
-          {render(blok.long_text)}
-        </div>
-      </div>
+      <Section>
+        <H1>{blok.title}</H1>
+        <article>{render(blok.long_text)}</article>
+      </Section>
     </SbEditable>
-  )
-}
+  );
+};
 
-export default BlogPost
+export default BlogPost;
