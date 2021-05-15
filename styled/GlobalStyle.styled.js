@@ -12,6 +12,8 @@ const HeadlingCommons = css`
 const GlobalStyle = createGlobalStyle`${({ theme }) => `
     * {
       box-sizing: border-box;
+      font-family: ${theme.fonts.generalFonts};
+      line-height: 1.5;
     }
 
     h1 {

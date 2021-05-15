@@ -8,6 +8,9 @@ const theme = {
     text: "#040404",
     link: "#7752e6",
   },
+  fonts: {
+    generalFonts: "Roboto, Arial, sans-serif",
+  },
 };
 
 export default theme;
