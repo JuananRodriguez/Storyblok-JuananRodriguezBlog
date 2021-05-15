@@ -1,4 +1,3 @@
-import React from "react";
 import SbEditable from "storyblok-react";
 import styled from "styled-components";
 import DynamicComponent from './DynamicComponent'
@@ -56,7 +55,7 @@ const SectionWrapperStyled = styled.section`${({ cssFromStoryBlok }) => `
         overflow: hidden;
         position: relative;
         width: 100%;
-        padding: 1rem 1rem 3rem 1rem;
+        padding: 1.5rem 1.5rem 3rem 1.5rem;
 
         ${cssFromStoryBlok}
         `}
