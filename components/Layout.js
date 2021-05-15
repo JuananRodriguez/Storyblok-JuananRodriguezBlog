@@ -9,7 +9,7 @@ const LayoutStyled = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 100vw;
+  width: width 100%;
   height: 100vh;
 
   main {
