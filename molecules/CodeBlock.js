@@ -17,6 +17,7 @@ const Pre = Styled.div`
     }
 
     & .CodeBlock_language{
+      font-family: ${({ theme }) => theme.fonts.generalFonts};
       position: absolute;
       right: 1rem;
       top: -1rem;
@@ -26,7 +27,6 @@ const Pre = Styled.div`
       font-size: 12px;
       letter-spacing: 1px;
       text-transform: capitalize;
-      font-style: italic;
     }
 
     

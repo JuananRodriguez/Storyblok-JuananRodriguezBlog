@@ -10,6 +10,7 @@ const theme = {
   },
   fonts: {
     generalFonts: "Roboto, Arial, sans-serif",
+    codeFont: "Monospace",
   },
 };
 

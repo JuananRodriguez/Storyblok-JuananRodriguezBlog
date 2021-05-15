@@ -7,8 +7,10 @@ const TipItemStyled = styled.div`
   border-radius: 8px;
 
   h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &:hover {

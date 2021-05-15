@@ -7,15 +7,25 @@ const HeadlingCommons = css`
 `;
 
 const GlobalStyle = createGlobalStyle`${({ theme }) => `
-    * {
-      box-sizing: border-box;
+
+    h1, h2, h3, h4, h5, h6, p {
       font-family: ${theme.fonts.generalFonts};
       color: ${theme.colors.text};
-      line-height: 1.5;
     }
 
+    pre, code{
+      font-family: ${theme.fonts.codeFont};
+      font-size: 1rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      line-height: 1.5;
+    }
+    
     h1 {
       ${HeadlingCommons};
+      color: ${theme.colors.title};
       font-size: 3rem;
       font-weight: bold;
       @media (max-width: ${theme.breakpoints.m}){
@@ -25,6 +35,7 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
 
     h2 {
       ${HeadlingCommons};
+      color: ${theme.colors.title};
       font-size: 2rem;
       @media (max-width: ${theme.breakpoints.m}){
           font-size: 1.8rem;
