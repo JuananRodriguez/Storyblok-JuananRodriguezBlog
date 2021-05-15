@@ -38,7 +38,7 @@ const TipsGrid = ({ blok }) => {
   return (
     <SbEditable content={blok} key={_uid}>
       {items.map((object) => (
-        <TipItem key={object._uid} {...object} />
+        <TipItem key={object.uuid} {...object} />
       ))}
     </SbEditable>
   );
