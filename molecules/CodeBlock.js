@@ -1,6 +1,5 @@
 import { memo } from "react";
 import { highlight } from "highlight.js";
-import "highlight.js/styles/monokai-sublime.css";
 import Styled from "styled-components";
 
 const Pre = Styled.div`
@@ -9,7 +8,7 @@ const Pre = Styled.div`
 
     pre {
       overflow: auto;
-      background-color: #23241f;
+      background-color: ${({ theme }) => theme.colors.codeBackground};
       border-radius: 8px;
       padding: 1rem;
       margin-bottom: 1rem;
@@ -21,7 +20,7 @@ const Pre = Styled.div`
       position: absolute;
       right: 1rem;
       top: -1rem;
-      background-color: #23241f;
+      background-color: ${({ theme }) => theme.colors.codeBackground};
       padding: 0.5rem 1rem;
       border-radius: 8px;
       font-size: 12px;

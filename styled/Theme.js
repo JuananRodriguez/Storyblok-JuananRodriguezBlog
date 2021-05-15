@@ -4,6 +4,7 @@ const theme = {
     l: "1200px",
   },
   colors: {
+    codeBackground: "rgb(40, 44, 52)",
     title: "#3c3f40",
     text: "#040404",
     link: "#7752e6",
