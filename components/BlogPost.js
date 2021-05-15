@@ -1,6 +1,6 @@
 import React from "react";
 import SbEditable from "storyblok-react";
-import { Section, H1, RichText } from "../molecules";
+import { Section, RichText } from "../molecules";
 
 const BlogPost = ({ blok }) => {
   const { long_text, title } = blok;
@@ -8,7 +8,7 @@ const BlogPost = ({ blok }) => {
   return (
     <SbEditable content={blok} key={blok._uid}>
       <Section>
-        <H1>{title}</H1>
+        <h1>{title}</h1>
         <article>
           <RichText content={long_text} />
         </article>
