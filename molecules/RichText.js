@@ -6,14 +6,13 @@ import {
 } from "storyblok-rich-text-react-renderer";
 import DynamicComponent from "../components/DynamicComponent";
 import CodeBlock from "../molecules/CodeBlock";
-import ParagraphStyled from "../styled/ParagraphStyled.styled";
 
 const defaultBlokResolver = (component, blok) => {
   return <DynamicComponent blok={{ component, ...blok }} />;
 };
 
 const nodeResolvers = {
-  [NODE_PARAGRAPH]: (children) => <ParagraphStyled>{children}</ParagraphStyled>,
+  [NODE_PARAGRAPH]: (children) => <p>{children}</p>,
   [NODE_CODEBLOCK]: (children, props) => (
     <CodeBlock className={props.class} content={children[0]} />
   ),

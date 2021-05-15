@@ -48,7 +48,7 @@ const GlobalStyle = createGlobalStyle`${({ theme }) => `
       margin-bottom: 1rem;
 
       @media (max-width: ${theme.breakpoints.m}){
-          font-size: 1.25rem;;
+          font-size: 1.1rem;;
       }
     }
 
