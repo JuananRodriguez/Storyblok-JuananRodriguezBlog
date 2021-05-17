@@ -5,14 +5,13 @@ import Styled from "styled-components";
 const Pre = Styled.div`
     position: relative;
     color: #fff;
+    margin: 2rem -1.25rem;
 
     pre {
       overflow: auto;
       background-color: ${({ theme }) => theme.colors.codeBackground};
       border-radius: 8px;
       padding: 1rem;
-      margin-bottom: 1rem;
-      margin: 2rem 0;
     }
 
     & .CodeBlock_language{
